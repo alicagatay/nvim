@@ -35,6 +35,8 @@ Plug 'joshdick/onedark.vim'
 "Flutter related plugins
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'akinsho/flutter-tools.nvim'
 
 "JavaScript related plugins
 Plug 'yuezk/vim-js'
@@ -239,13 +241,10 @@ require'lspconfig'.pyright.setup{}
 EOF
 
 
-"Dart
+"Flutter
 lua << EOF
-require'lspconfig'.dartls.setup{}
+  require("flutter-tools").setup{} -- use defaults
 EOF
-
-
-
 
 
 "HTML
