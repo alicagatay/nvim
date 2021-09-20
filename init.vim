@@ -46,6 +46,10 @@ Plug 'maxmellon/vim-jsx-pretty'
 "Startify
 Plug 'mhinz/vim-startify'
 
+"Vim markdown
+Plug 'iamcco/markdown-preview.nvim'
+
+
 call plug#end()
 
 "
