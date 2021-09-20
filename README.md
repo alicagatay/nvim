@@ -23,4 +23,4 @@ This configuration includes some lines about setting LSP up for some languages s
 
 ## Startify
 
-In this configuration, I have configured a start up screen that will open when you straightforward open Neovim without any files. To configure the contents of this for your likings, please read the call `:h Startify` from Neovim.
+In this configuration, I have configured a start up screen that will open when you straightforward open Neovim without any files. To configure the contents of this for your likings, please read the help page by calling `:h Startify` inside Neovim.
