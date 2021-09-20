@@ -205,15 +205,13 @@ let g:startify_custom_header = [
 
 
 let g:startify_files_number = 10
-let g:startify_change_to_dir = 1
-let g:startify_change_cmd = 'cd'
 
 
 let g:startify_lists = [
           \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
           \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
-          \ { 'type': 'files',     'header': ['   Files']            },
+          \ { 'type': 'files',     'header': ['   Last Opened Files']            },
                     \ ]
 
 let g:startify_bookmarks = [
