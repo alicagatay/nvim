@@ -17,10 +17,18 @@ And then copy the configuration file to init.vim
 
 Then run Neovim, ignore the errors, and call `:PlugInstall`
 
+# Plugins I want to mention about
+My Neovim configuration is using a good amount of plugins such as LSP and Startify. All the plugins that are in my inti.vim file has a purpose to me, none of them are unessential. Here, I want to mention some of them and how to configure them.
+
+## markdown-preview
+This plugin helps me to preview markdown files as I write them on the browser of my choice. The one thing that I love about this is that it almost updates the preview almost instantly as you type. The configuration of the plugin is also very simple. after calling `:PlugInstall` from the Neovim command line, change your directory to the folder of this plugin, and then type `yarn install` inside that folder. You are good to go. 
+
+Once you opened a markdown file, you can preview it with the command `:MarkdownPreview`. To close the preview, simply close the file.
+
 ## Language Server Protocol
 
-This configuration includes some lines about setting LSP up for some languages such as Python and JavaScript. If you don't want these, or want to change the languages inside, please search the web for more information about NeoVim and it's LSP support
+The LSP plugin includes some lines about setting LSP up for some languages such as Python and JavaScript. If you don't want these, or want to change the languages inside, please search the web for more information about Neovim and it's LSP support
 
 ## Startify
 
-In this configuration, I have configured a start up screen that will open when you straightforward open Neovim without any files. To configure the contents of this for your likings, please read the help page by calling `:h Startify` inside Neovim.
+With this plugin, I have configured a start up screen that will open when you straightforward open Neovim without any files. To configure the contents of this for your likings, please read the help page by calling `:h Startify` inside Neovim.
