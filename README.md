@@ -20,3 +20,7 @@ Then run Neovim, ignore the errors, and call `:PlugInstall`
 ## Language Server Protocol
 
 This configuration includes some lines about setting LSP up for some languages such as Python and JavaScript. If you don't want these, or want to change the languages inside, please search the web for more information about NeoVim and it's LSP support
+
+## Startify
+
+In this configuration, I have configured a start up screen that will open when you straightforward open Neovim without any files. To configure the contents of this for your likings, please read the call `:h Startify` from Neovim.
