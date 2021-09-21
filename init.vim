@@ -67,6 +67,8 @@ highlight CursorLineNr ctermfg=39 ctermbg=234
 highlight LineNr ctermbg=234
 highlight SyntasticWarningSign ctermfg=173
 
+set clipboard=unnamedplus
+
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
