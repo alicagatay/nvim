@@ -7,6 +7,7 @@ call plug#begin()
 "Plugin for the language server client
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
+Plug 'williamboman/nvim-lsp-installer'
 
 "Automatically close opened brackets
 Plug 'jiangmiao/auto-pairs'
@@ -277,57 +278,36 @@ let g:gitgutter_enabled=1
 let vim_markdown_folding_disabled = 1
 
 
-
-
 "
 "
-"LSP related configs
+"LSP Related Configuration
 "
 "
-
-
-"Python
 lua << EOF
-require'lspconfig'.pyright.setup{}
+local lsp_installer = require("nvim-lsp-installer")
+
+-- Register a handler that will be called for all installed servers.
+-- Alternatively, you may also register handlers on specific server instances instead (see example below).
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
+
+    -- This setup() function is exactly the same as lspconfig's setup function.
+    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+    server:setup(opts)
+end)
+
+
 EOF
 
 
-"Flutter
 lua << EOF
   require("flutter-tools").setup{} -- use defaults
 EOF
-
-
-"HTML
-lua << EOF
-require'lspconfig'.html.setup{}
-EOF
-
-
-
-"JSON
-lua << EOF
-require'lspconfig'.jsonls.setup {
-    capabilities = capabilities,
-    commands = {
-      Format = {
-        function()
-          vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
-        end
-      }
-    }
-}
---Enable (broadcasting) snippet capability for completion
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-EOF
-
-
-"JavaScript
-lua << EOF
-require'lspconfig'.tsserver.setup{}
-EOF
-
 
 
 
