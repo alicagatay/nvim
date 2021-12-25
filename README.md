@@ -1,6 +1,6 @@
 # My init.vim config
 
-This repository contains my init.vim setup for Neovim v0.5.0+. It is meant to start up instantly and it contains the stuff I use while developing programs with several languages like Python, JavaScript and more.
+This repository contains my init.vim setup for Neovim v0.6.0+. It is meant to start up instantly and it contains the stuff I use while developing programs with several languages like Python, JavaScript and more.
 
 # Setting it up
 
