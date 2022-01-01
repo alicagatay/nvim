@@ -196,6 +196,14 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "
 "
 
+
+"""""""""""""""""""""""""""""
+" => Markdown preview plugin
+""""""""""""""""""""""""""""""
+let g:mkdp_auto_start = 1
+
+
+
 """""""""""""""""""""""""""""
 " => Startify plugin
 """"""""""""""""""""""""""""""
@@ -251,9 +259,17 @@ nmap ]x ctrih/^# %%<CR><CR>
 lua << EOF
 local iron = require('iron')
 
+iron.core.add_repl_definitions {
+  python = {
+    mycustom = {
+      command = {"mycmd"}
+    }
+  },
+
 iron.core.set_config {
   preferred = {
-    python = "ipython"
+    python = "ipython",
+    }
   }
 }
 EOF
