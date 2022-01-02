@@ -60,6 +60,13 @@ Plug 'kana/vim-textobj-line'
 Plug 'goerz/jupytext.vim'
 Plug 'GCBallesteros/vim-textobj-hydrogen'
 
+"Neovim Telescope plugin
+Plug 'nvim-telescope/telescope.nvim'
+
+"Treesitter plugin
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+
 
 call plug#end()
 
@@ -201,6 +208,18 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " => Markdown preview plugin
 """"""""""""""""""""""""""""""
 let g:mkdp_auto_start = 1
+
+
+
+
+"""""""""""""""""""""""""""""
+" => Telescope plugin
+""""""""""""""""""""""""""""""
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
 
 
 
