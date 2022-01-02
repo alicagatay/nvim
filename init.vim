@@ -210,8 +210,6 @@ let g:mkdp_auto_start = 1
 """"""""""""""""""""""""""""""
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 
 
@@ -348,12 +346,14 @@ nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 
 
-" auto-format
+" auto-formatting for different file types
 autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
-
-
+autocmd BufWritePre *.java lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.html lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.css lua vim.lsp.buf.formatting_sync(nil, 100)
+autocmd BufWritePre *.md lua vim.lsp.buf.formatting_sync(nil, 100)
 lua << EOF
 
 vim.o.completeopt = "menuone,noselect"
