@@ -12,9 +12,6 @@ Plug 'williamboman/nvim-lsp-installer'
 "Automatically close opened brackets
 Plug 'jiangmiao/auto-pairs'
 
-"Minimalist edit mode
-Plug 'junegunn/goyo.vim'
-
 "Tabline plugin
 Plug 'itchyny/lightline.vim'
 
@@ -43,9 +40,6 @@ Plug 'akinsho/flutter-tools.nvim'
 Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
-
-"Startify
-Plug 'mhinz/vim-startify'
 
 "Vim markdown
 Plug 'iamcco/markdown-preview.nvim'
@@ -203,7 +197,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "
 "
 
-
 """""""""""""""""""""""""""""
 " => Markdown preview plugin
 """"""""""""""""""""""""""""""
@@ -219,47 +212,6 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-
-
-
-"""""""""""""""""""""""""""""
-" => Startify plugin
-""""""""""""""""""""""""""""""
-
-let g:startify_custom_header = [
-            \ '__        __   _                                 _                _      ',
-            \ '\ \      / /__| | ___ ___  _ __ ___   ___       | |__   __ _  ___| | __  ',
-            \ ' \ \ /\ / / _ \ |/ __/ _ \| |_ ` _ \ / _ \      | |_ \ / _` |/ __| |/ /  ',
-            \ '  \ V  V /  __/ | (_| (_) | | | | | |  __/      | |_) | (_| | (__|   < _ ',
-            \ '   \_/\_/ \___|_|\___\___/|_| |_| |_|\___|      |_.__/ \__,_|\___|_|\_( )',
-            \ '                                                                      |/ ',
-            \ '    _    _ _            __                                               ',
-            \ '   / \  | (_)           \ \                                              ',
-            \ '  / _ \ | | |            | |                                             ',
-            \ ' / ___ \| | |        _   | |                                             ',
-            \ '/_/   \_\_|_|       (_)  | |                                             ',
-            \ '                        /_/                                              ',
-            \ ]
-
-
-
-let g:startify_files_number = 10
-
-
-let g:startify_lists = [
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-          \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
-          \ { 'type': 'files',     'header': ['   Last Opened Files']            },
-                    \ ]
-
-let g:startify_bookmarks = [
-            \ { 'i': '~/.config/nvim/init.vim' },
-            \ { 'z': '~/.zshrc' },
-            \ ]
-
-
 
 
 
@@ -297,8 +249,9 @@ EOF
 """""""""""""""""""""""""""""
 " => MRU plugin
 """"""""""""""""""""""""""""""
-let MRU_Max_Entries = 400
-map <leader>f :MRU<CR>
+let MRU_Max_Entries = 1000 
+let MRU_Window_Height = 20
+map <leader>hh :MRU<CR>
 
 
 
@@ -315,11 +268,9 @@ let g:user_zen_mode='a'
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeWinPos = "right"
-let NERDTreeShowHidden=0
-let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-let g:NERDTreeWinSize=35
+let NERDTreeShowHidden=1
+let g:NERDTreeWinSize=40
 map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
 
 
