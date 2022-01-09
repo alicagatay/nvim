@@ -5,14 +5,15 @@ This repository contains my minimalist and productive init.vim configuration for
 
 ## Install vim-plug:
 
-Install vim-plug plugin with the command(this command is for Unix based systems, for other operating systems please look up to the web)
+Install vim-plug plugin with the command below if you don't have Vim Plug installed already(this command is for Unix based systems, for other operating systems please look up to the web)
 
 ```sh
-curl -fLo ~/path/to/your/nvim/configuration/file/autoload/plug.vim --create-dirs \
+curl -fLo ~/path/to/your/nvim/configuration/folder/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-And then copy the configuration file to init.vim
+And then copy the stuff inside the init.vim file on this repository to the init.vim file on your device(if you dont have an init.vim file, create one by `nvim init.vim`)
+
 
 Then run Neovim, ignore the errors, and call `:PlugInstall`
 
