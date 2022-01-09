@@ -8,7 +8,7 @@ This repository contains my minimalist and productive init.vim configuration for
 Install vim-plug plugin with the command(this command is for Unix based systems, for other operating systems please look up to the web)
 
 ```sh
-curl -fLo ~/nvim/autoload/plug.vim --create-dirs \
+curl -fLo ~/path/to/your/nvim/configuration/file/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
