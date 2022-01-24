@@ -28,8 +28,6 @@ I am using the default LSP support of Neovim with the help of `williamboman/nvim
 This plugin is so similar to `junegunn/fzf.vim`, but this is more integrated to Neovim rather than Vim(at least in my opinion). It lets you search through your directories for both file names and words inside files.
 ## Most Recently Used (MRU)
 This plugins helps me to view my file editing history within Neovim and lets me open them instantly.
-## Github Copilot
-This plugin allows me to use the Github Copilot engine inside Neovim. The reason for me using Github Copilot is not to let the bot write the code, it is there just to give me different ideas to accomplish different problems that occurs in my code(which I believe should be the only use case for it anyways).
 
 
 # Conclusion

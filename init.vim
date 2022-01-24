@@ -44,9 +44,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 "Vim markdown
 Plug 'iamcco/markdown-preview.nvim'
 
-"Github Copilot
-Plug 'github/copilot.vim'
-
 "Jupyter Notebook support
 Plug 'hkupty/iron.nvim'
 Plug 'kana/vim-textobj-user'
