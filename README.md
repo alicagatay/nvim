@@ -20,6 +20,8 @@ Then run Neovim, ignore the errors, and call `:PlugInstall`
 # Plugins I want to mention about
 My Neovim configuration is using a good amount of plugins such as the built in Language Server Protocol and Telescope. All the plugins that are in my init.vim file has a purpose to me, none of them are unessential. Here, I want to mention some of them and how to configure them.
 
+## Github Copilot
+This plugin lets me use the Github Copilot architecture within Neovim. The configuration of this plugin is fairly simple. After adding the plugin into your init.vim file and installing with your package manager of choice, type `:Copilot setup` into the Neovim command line and follow the steps in the screen.
 ## markdown-preview 
 This plugin helps me to preview markdown files as I write them on the browser of my choice. The one thing that I love about this plugin is that it updates the preview almost instantly as you type. The configuration of the plugin is also very simple. after calling `:PlugInstall` from the Neovim command line, change your directory to the folder of this plugin, and then type `yarn install` inside that folder. You are good to go. Once you open the markdown file that you want to edit, a preview of the file will appear automatically in your default browser.
 ## Language Server Protocol

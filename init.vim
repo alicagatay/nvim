@@ -57,6 +57,9 @@ Plug 'nvim-telescope/telescope.nvim'
 "Treesitter plugin
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+"Github Copilot plugin
+Plug 'github/copilot.vim'
+
 
 
 call plug#end()
