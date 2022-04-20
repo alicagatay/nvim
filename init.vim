@@ -44,13 +44,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 "Vim markdown
 Plug 'iamcco/markdown-preview.nvim'
 
-"Jupyter Notebook support
-Plug 'hkupty/iron.nvim'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-line'
-Plug 'goerz/jupytext.vim'
-Plug 'GCBallesteros/vim-textobj-hydrogen'
-
 "Neovim Telescope plugin
 Plug 'nvim-telescope/telescope.nvim'
 
@@ -212,36 +205,6 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
 
-
-"""""""""""""""""""""""""""""
-" => Jupyter Notebook Support 
-""""""""""""""""""""""""""""""
-" Jupytext
-let g:jupytext_fmt = 'py'
-let g:jupytext_style = 'hydrogen'
-
-" Send cell to IronRepl and move to next cell.
-" Depends on the text object defined in vim-textobj-hydrogen
-" You first need to be connected to IronRepl
-nmap ]x ctrih/^# %%<CR><CR>
-
-lua << EOF
-local iron = require('iron')
-
-iron.core.add_repl_definitions {
-  python = {
-    mycustom = {
-      command = {"mycmd"}
-    }
-  },
-
-iron.core.set_config {
-  preferred = {
-    python = "ipython",
-    }
-  }
-}
-EOF
 
 
 """""""""""""""""""""""""""""
