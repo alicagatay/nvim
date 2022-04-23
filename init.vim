@@ -53,6 +53,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Github Copilot plugin
 Plug 'github/copilot.vim'
 
+"Startify plugin
+Plug 'mhinz/vim-startify'
+
+
 
 
 call plug#end()
@@ -186,6 +190,47 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "Plugin Configs
 "
 "
+
+"""""""""""""""""""""""""""""
+" => Startify plugin
+""""""""""""""""""""""""""""""
+
+
+let g:startify_custom_header = [
+            \ '__        __   _                                 _                _      ',
+            \ '\ \      / /__| | ___ ___  _ __ ___   ___       | |__   __ _  ___| | __  ',
+            \ ' \ \ /\ / / _ \ |/ __/ _ \| |_ ` _ \ / _ \      | |_ \ / _` |/ __| |/ /  ',
+            \ '  \ V  V /  __/ | (_| (_) | | | | | |  __/      | |_) | (_| | (__|   < _ ',
+            \ '   \_/\_/ \___|_|\___\___/|_| |_| |_|\___|      |_.__/ \__,_|\___|_|\_( )',
+            \ '                                                                      |/ ',
+            \ '    _    _ _            __                                               ',
+            \ '   / \  | (_)           \ \                                              ',
+            \ '  / _ \ | | |            | |                                             ',
+            \ ' / ___ \| | |        _   | |                                             ',
+            \ '/_/   \_\_|_|       (_)  | |                                             ',
+            \ '                        /_/                                              ',
+            \ ]
+
+
+
+
+let g:startify_lists = [
+            \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+            \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
+            \ { 'type': 'files',     'header': ['   Files']            },
+            \ ]
+
+let g:startify_bookmarks = [
+            \ { 'i': '~/.config/nvim/init.vim' },
+            \ { 'z': '~/.zshrc' },
+            \ ]
+
+let g:startify_files_number = 10
+let g:startify_change_to_dir = 1
+let g:startify_change_cmd = 'cd'
+
+
+
 
 """""""""""""""""""""""""""""
 " => Markdown preview plugin
