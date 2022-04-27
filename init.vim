@@ -27,6 +27,9 @@ Plug 'tpope/vim-fugitive'
 "Plugin for git commit history
 Plug 'junegunn/gv.vim'
 
+"Plugin for vim-rhubarb
+Plug 'tpope/vim-rhubarb'
+
 "Show git changes on code
 Plug 'airblade/vim-gitgutter'
 
