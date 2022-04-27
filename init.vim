@@ -24,6 +24,9 @@ Plug 'preservim/nerdtree'
 "Plugin for git
 Plug 'tpope/vim-fugitive'
 
+"Plugin for git commit history
+Plug 'junegunn/gv.vim'
+
 "Show git changes on code
 Plug 'airblade/vim-gitgutter'
 
@@ -237,6 +240,11 @@ let g:startify_change_cmd = 'cd'
 """"""""""""""""""""""""""""""
 let g:mkdp_auto_start = 1
 
+
+"""""""""""""""""""""""""""""
+" => Plugin for git history
+""""""""""""""""""""""""""""""
+nnoremap <leader>gv <cmd>GV<cr>
 
 
 
