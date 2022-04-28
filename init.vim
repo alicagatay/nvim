@@ -251,6 +251,24 @@ nnoremap <leader>gh <cmd>GV<cr>
 
 
 
+
+"""""""""""""""""""""""""""""
+" => Flutter shortcuts
+""""""""""""""""""""""""""""""
+nnoremap <leader>fr <cmd>FlutterRun<cr>
+nnoremap <leader>frel <cmd>FlutterReload<cr>
+nnoremap <leader>fres <cmd>FlutterRestart<cr>
+nnoremap <leader>fq <cmd>FlutterQuit<cr>
+nnoremap <leader>fd <cmd>FlutterDevices<cr>
+nnoremap <leader>fe <cmd>FlutterEmulators<cr>
+nnoremap <leader>df <cmd>DartFmt<cr>
+
+
+
+
+
+
+
 """""""""""""""""""""""""""""
 " => Telescope plugin
 """"""""""""""""""""""""""""""
