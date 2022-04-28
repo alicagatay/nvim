@@ -247,7 +247,7 @@ let g:mkdp_auto_start = 1
 """""""""""""""""""""""""""""
 " => Plugin for git history
 """"""""""""""""""""""""""""""
-nnoremap <leader>gv <cmd>GV<cr>
+nnoremap <leader>gh <cmd>GV<cr>
 
 
 
