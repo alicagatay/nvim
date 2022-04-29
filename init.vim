@@ -69,6 +69,13 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+
+"Plugins for a Jupyter like experience within Neovim
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+Plug 'GCBallesteros/iron.nvim'
+Plug 'GCBallesteros/vim-textobj-hydrogen'
+Plug 'GCBallesteros/jupytext.vim'
 call plug#end()
 
 "
@@ -191,7 +198,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 """""""""""""""""""""""""""""
 " => Lightline Plugin
 """"""""""""""""""""""""""""""
-
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
@@ -199,7 +205,6 @@ let g:lightline = {
 """""""""""""""""""""""""""""
 " => Startify plugin
 """"""""""""""""""""""""""""""
-
 let g:startify_custom_header = [
             \ '__        __   _                                 _                _      ',
             \ '\ \      / /__| | ___ ___  _ __ ___   ___       | |__   __ _  ___| | __  ',
@@ -366,3 +371,26 @@ lua <<EOF
   })
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 EOF
+
+"
+"
+" Jupyter notebook related configurations
+"
+"
+lua << EOF
+local iron = require('iron')
+
+iron.core.set_config {
+  preferred = {
+    python = "ipython"
+  }
+}
+EOF
+" Jupytext
+let g:jupytext_fmt = 'py'
+let g:jupytext_style = 'hydrogen'
+
+" Send cell to IronRepl and move to next cell.
+" Depends on the text object defined in vim-textobj-hydrogen
+" You first need to be connected to IronRepl
+nmap ]x ctrih/^# %%<CR><CR>
