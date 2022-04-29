@@ -189,6 +189,14 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 "
 
 """""""""""""""""""""""""""""
+" => Lightline Plugin
+""""""""""""""""""""""""""""""
+
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ }
+
+"""""""""""""""""""""""""""""
 " => Startify plugin
 """"""""""""""""""""""""""""""
 
