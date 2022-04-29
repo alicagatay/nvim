@@ -70,9 +70,6 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-
-
-
 call plug#end()
 
 "
@@ -84,19 +81,15 @@ colorscheme onedark
 set number relativenumber
 set mouse=n
 set cursorline
-
 highlight CursorLine ctermbg=232
 highlight CursorLineNr ctermfg=39 ctermbg=234
 highlight LineNr ctermbg=234
 highlight SyntasticWarningSign ctermfg=173
-
 set clipboard=unnamedplus
-
 set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-
 
 " Sets how many lines of history VIM has to remember
 set history=500
@@ -108,8 +101,6 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 au FocusGained,BufEnter * checktime
-
-
 
 "Always show current position
 set ruler
@@ -153,8 +144,6 @@ set novisualbell
 set t_vb=
 set tm=500
 
-
-
 " Enable syntax highlighting
 syntax enable 
 
@@ -164,12 +153,10 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-
 " Turn backup off, since most stuff is in SVN, git etc. anyway...
 set nobackup
 set nowb
 set noswapfile
-
 
 " Use spaces instead of tabs
 set expandtab
@@ -189,15 +176,12 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 map <C-space> ?
 
-
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
 
 "
 "
@@ -208,7 +192,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 """""""""""""""""""""""""""""
 " => Startify plugin
 """"""""""""""""""""""""""""""
-
 
 let g:startify_custom_header = [
             \ '__        __   _                                 _                _      ',
@@ -225,9 +208,6 @@ let g:startify_custom_header = [
             \ '                        /_/                                              ',
             \ ]
 
-
-
-
 let g:startify_lists = [
             \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
             \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
@@ -243,22 +223,15 @@ let g:startify_files_number = 10
 let g:startify_change_to_dir = 1
 let g:startify_change_cmd = 'cd'
 
-
-
-
 """""""""""""""""""""""""""""
 " => Markdown preview plugin
 """"""""""""""""""""""""""""""
 let g:mkdp_auto_start = 1
 
-
 """""""""""""""""""""""""""""
 " => Plugin for git history
 """"""""""""""""""""""""""""""
 nnoremap <leader>gh <cmd>GV<cr>
-
-
-
 
 """""""""""""""""""""""""""""
 " => Flutter shortcuts
@@ -271,20 +244,11 @@ nnoremap <leader>fd <cmd>FlutterDevices<cr>
 nnoremap <leader>fe <cmd>FlutterEmulators<cr>
 nnoremap <leader>df <cmd>DartFmt<cr>
 
-
-
-
-
-
-
 """""""""""""""""""""""""""""
 " => Telescope plugin
 """"""""""""""""""""""""""""""
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-
-
-
 
 """""""""""""""""""""""""""""
 " => MRU plugin
@@ -293,16 +257,11 @@ let MRU_Max_Entries = 1000
 let MRU_Window_Height = 20
 map <leader>hh :MRU<CR>
 
-
-
-
 """"""""""""""""""""""""""""""
 " => ZenCoding
 """"""""""""""""""""""""""""""
 " Enable all functions in all modes
 let g:user_zen_mode='a'
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
@@ -313,15 +272,10 @@ let g:NERDTreeWinSize=40
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nf :NERDTreeFind<cr>
 
-
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Git gutter (Git diff)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=1
-
-
 
 "
 "
@@ -334,7 +288,6 @@ let g:gitgutter_enabled=1
 """"""""""""""""""""""""""""""
 let vim_markdown_folding_disabled = 1
 
-
 "
 "
 "LSP Related Configuration
@@ -343,92 +296,59 @@ let vim_markdown_folding_disabled = 1
 lua << EOF
 local lsp_installer = require("nvim-lsp-installer")
 
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
     local opts = {}
-
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
-
-    -- This setup() function is exactly the same as lspconfig's setup function.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     server:setup(opts)
 end)
-
-
 EOF
-
 
 lua << EOF
-  require("flutter-tools").setup{} -- use defaults
+  require("flutter-tools").setup{}
 EOF
-
-
 
 "
 "
 "nvim-cmp setup
-"
+" uses vim snip for its snippet engine
 "
 set completeopt=menu,menuone,noselect
-
 lua <<EOF
-  -- Setup nvim-cmp.
   local cmp = require'cmp'
-
   cmp.setup({
     snippet = {
-      -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+        vim.fn["vsnip#anonymous"](args.body)
       end,
     },
     window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
-    }, {
-      { name = 'buffer' },
+      { name = 'vsnip' },
+      },{
+  { name = 'buffer' },
     })
   })
-
-  -- Set configuration for specific filetype.
   cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
-      { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+      { name = 'cmp_git' },
     }, {
       { name = 'buffer' },
     })
   })
-
-  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = 'buffer' }
     }
   })
-
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
@@ -437,7 +357,5 @@ lua <<EOF
       { name = 'cmdline' }
     })
   })
-
-  -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 EOF
