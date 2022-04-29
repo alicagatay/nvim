@@ -62,7 +62,6 @@ Plug 'github/copilot.vim'
 Plug 'mhinz/vim-startify'
 
 "Plugins needed for nvim-cmp setup
-Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
