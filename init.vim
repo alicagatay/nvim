@@ -255,6 +255,8 @@ nnoremap <leader>fq <cmd>FlutterQuit<cr>
 nnoremap <leader>fd <cmd>FlutterDevices<cr>
 nnoremap <leader>fe <cmd>FlutterEmulators<cr>
 nnoremap <leader>df <cmd>DartFmt<cr>
+nnoremap <leader>fo <cmd>FlutterOutlineToggle<cr>
+
 
 """""""""""""""""""""""""""""
 " => Telescope plugin
