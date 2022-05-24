@@ -76,6 +76,10 @@ Plug 'kana/vim-textobj-line'
 Plug 'GCBallesteros/iron.nvim'
 Plug 'GCBallesteros/vim-textobj-hydrogen'
 Plug 'GCBallesteros/jupytext.vim'
+
+"Lorem ipsum generator plugin.
+Plug 'vim-scripts/loremipsum'
+
 call plug#end()
 
 "
